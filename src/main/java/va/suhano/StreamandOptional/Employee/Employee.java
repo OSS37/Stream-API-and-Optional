@@ -5,19 +5,19 @@ import java.util.Objects;
 public class Employee {
     private String firstName;
     private String lastName;
-    private int departament;
+    private int department;
     private double salary;
 
 
-    public Employee(String firstName, String lastName, int departament, double salary) {
+    public Employee(String firstName, String lastName, int department, double salary) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.departament = departament;
+        this.department = department;
         this.salary = salary;
     }
 
-    public int getDepartament() {
-        return departament;
+    public int getDepartment() {
+        return department;
     }
 
     public double getSalary() {
@@ -41,12 +41,12 @@ public class Employee {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Employee employee = (Employee) o;
-        return departament == employee.departament && Double.compare(employee.salary, salary) == 0 && firstName.equals(employee.firstName) && lastName.equals(employee.lastName);
+        return department == employee.department && Double.compare(employee.salary, salary) == 0 && firstName.equals(employee.firstName) && lastName.equals(employee.lastName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(firstName, lastName, departament, salary);
+        return Objects.hash(firstName, lastName, department, salary);
     }
 
     @Override
@@ -54,7 +54,7 @@ public class Employee {
         return "Employee{" +
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", departament=" + departament +
+                ", department=" + department +
                 ", salary=" + salary +
                 '}';
     }
