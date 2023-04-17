@@ -2,21 +2,18 @@ package va.suhano.StreamandOptional.Employee;
 
 
 import org.springframework.stereotype.Service;
-import va.suhano.StreamandOptional.DepartamentAndSalary.DepartamentAndSalaryService;
 import va.suhano.StreamandOptional.exception.EmployeeAlreadyAddedException;
 import va.suhano.StreamandOptional.exception.EmployeeNotFoundException;
 
 import java.util.*;
 
 @Service
-public class EmployeeService extends DepartamentAndSalaryService {
+public class EmployeeService {
     private final Map<String, Employee> employees = new HashMap<>();
+
+
     private String key (String firstName, String lastName) {
         return firstName + " " + lastName;
-    }
-
-    public EmployeeService(EmployeeService employeeService) {
-        super(employeeService);
     }
 
     public Employee add(String firstName, String lastName, int departament, double salary) {
